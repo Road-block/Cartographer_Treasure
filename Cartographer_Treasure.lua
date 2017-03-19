@@ -869,6 +869,9 @@ function Cartographer_Treasure:UI_ERROR_MESSAGE(msg)
 end
 
 function Cartographer_Treasure:IsNoteHidden(zone, id)
+  if type(Cartographer_TreasureDB[zone][id]) == "table" then
+    return not self.db.profile.filter[Cartographer_TreasureDB[zone][id].icon]
+  end
   return not self.db.profile.filter[Cartographer_TreasureDB[zone][id]]
 end
 
