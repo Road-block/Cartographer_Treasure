@@ -693,15 +693,7 @@ function Cartographer_Treasure:OnInitialize()
       Cartographer_TreasureDB["Felwood"][226859] = "SongFlower"
       Cartographer_TreasureDB["Felwood"][139645] = "SongFlower"
       Cartographer_TreasureDB["Felwood"][879407] = "SongFlower" 
-    end    
-    -- fix up broken notes
-    --[[for _, zone in pairs(Cartographer_TreasureDB) do
-      for id, data in pairs(zone) do
-        if type(data) == "table" then
-          zone[id] = data.icon
-        end
-      end
-    end]]
+    end
 	end
 	lua51 = loadstring("return function(...) return ... end") and true or false
 end
@@ -849,7 +841,7 @@ end
 
 -- opening now seems to just do a blank "Opening cast spell"
 function Cartographer_Treasure:SPELLCAST_START(msg)
-	if (msg == bs["Opening"]) or (msg == bs["Pick Lock"]) then
+	if (msg == bs["Opening"]) or (msg == bs["Pick Lock"]) or (msg == L["Un'Goro Dirt Pile"]) then
 		local what = GameTooltipTextLeft1:GetText();
 		if what then
 			self:RegisterTreasure(what)
