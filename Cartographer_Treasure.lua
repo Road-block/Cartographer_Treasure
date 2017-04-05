@@ -4,16 +4,17 @@ local AceAddon = AceLibrary("AceAddon-2.0")
 local Tablet = AceLibrary("Tablet-2.0")
 
 local L = AceLibrary("AceLocale-2.2"):new("Cartographer_Treasure")
+
 L:RegisterTranslations("enUS", function() return {
 	["Filter"] = true,
 	["Filter out treasure"] = true,	
 	["Select all"] = true,
 	["Select none"] = true,
 	
-  ["Treasure"] = true,
+	["Treasure"] = true,
 	["Module description"] = "Treasure mapnotes for Cartographer (based on Cartographer_Mining by kergoth)",
   
-  ["Icon alpha"] = true,
+	["Icon alpha"] = true,
 	["Alpha transparency of the icon"] = true,
 	["Icon size"] = true,
 	["Size of the icons on the map"] = true,
@@ -96,8 +97,100 @@ L:RegisterTranslations("enUS", function() return {
 	["Gizmorium Shipping Crate"] = true,
 	["Shay's Chest"] = true,
 	["Kerlonian's Chest"] = true,
+} end)
+
+L:RegisterTranslations("ruRU", function() return {
+	["Filter"] = "Фильтр",
+	["Filter out treasure"] = "Отфильтровать сокровища",	
+	["Select all"] = "Выбрать все",
+	["Select none"] = "Ничего не выбирать",
 	
+	["Treasure"] = "Сокровища",
+	["Module description"] = "Заметки сокровищ на картах для картографа (на основе Cartographer_Mining)",
+  
+	["Icon alpha"] = "Прозрачность иконки",
+	["Alpha transparency of the icon"] = "Прозрачность иконки на карте",
+	["Icon size"] = "Размер иконки",
+	["Size of the icons on the map"] = "Размер иконки на карте",
 	
+	-- Icons
+	["Box"] = "Коробка",
+	["Chest"] = "Сундук",
+	["Clam"] = "Моллюск",
+	["Barrel"] = "Бочонок",
+	["Shellfish"] = "Моллюск",
+	["Footlocker"] = "Сундучок (для разбойников)",
+	["Blood"] = "Кровь",
+	["Soil"] = "Почва",
+	["Sprout"] = "Побег",
+	["Crystal"] = "Кристалл",
+	["Berries"] = "Ягоды",
+	["Tuber"] = "Плод",
+	["Nightdragon"] = "Ночной дракон",
+	["Songflower"] = "Песнецвет",
+	
+	-- Descriptive/Menu names
+	["Blood of Heroes"] = "Кровь героев",
+	["Hero"] = "Герой",
+	["Un'Goro Dirt Pile"] = "Куча земли Ун'Горо",
+	["Bloodpetal Sprout"] = "Побег кровоцвета",
+	["Power Crystal"] = "кристалл силы",
+	["Food Crate"] = "Ящик со съестными припасами",
+	["Drink Barrel"] = "Питьевой бочонок",
+	["Shellfish Trap"] = "Ловушка на моллюска",
+	["Giant Clam"] = "Гигантский моллюск",
+	["Un'Goro Power Crystal"] = "Кристалы силы Ун'Горо",
+	["Night Dragon's Breath"] = "Ночное дыхание дракона",
+	["Nightdragon"] = "Ночной дракон",
+	["Whipper Root Tuber"] = "Плод кнутокорня",
+	["Whipper Root"] = "кнутокорень",
+	["Windblossom Berries"] = "Ягоды ветроцвета",
+	["SongFlower"] = "Песнецвет",
+	["Songflower"] = "Песнецвет",
+	-- regex needs
+	["Crate"] = "Ящик",
+	["Cask"] = "Контейнер",
+	["Dirt Pile"] = "Куча земли",
+	--- Various treasure found around the world
+	["Solid Chest"] = "Добротный сундук",
+	["Battered Footlocker"] = "Побитый сундучок",
+	["Food Crate"] = "Ящик со съестными припасами",
+	["Barrel Of Melon Juice"] = "Бочка дынного сока",
+	["Horde Supply Crate"] = "Ящик Орды с припасами",
+	["Document Chest"] = "Ящик с документами",
+	["Damaged Chest"] = "Поврежденный сундук",
+	["Alliance Chest"] = "Сундук Альянса", -- need test
+	["Barrel Of Sweet Nectar"] = "Бочка сладкого нектара",
+	["Trelane's Chest"] = "Сундук Трелана",
+	["Battered Chest"] = "Побитый сундук",
+	["Barrel Of Milk"] = "Бочка молока",
+	["Box of Assorted Parts"] = "Ящик с различными деталями",
+	["Broken Barrel"] = "Разбитая бочка",
+	["Alexston's Chest"] = "Сундук Алекстона",
+	["Excavation Supply Crate"] = "Ящик с припасами с карьера",
+	["Chest Of Containment Coffers"] = "Ящик со шкатулками-духоловками",
+	["Karnitol's Chest"] = "Сундук Карнитола",
+	["Malem Chest"] = "Сундук Малема",
+	["Water Barrel"] = "Бочка с водой",
+	["Perrine's Chest"] = "Сундук Перрина",
+	["Weapon Crate"] = "Ящик с оружием",
+	["Crate With Holes"] = "Ящик с отверстиями",
+	["Stolen Iron Chest"] = "Краденый железный сундук",
+	["Armor Crate"] = "Оружейный ящик",
+	["Marvon's Chest"] = "Сундук Марвона",
+	["Scattered Crate"] = "Разбитый ящик",
+	["Caravan Chest"] = "Сундук из каравана",
+	["Mossy Footlocker"] = "Замшелый сундучок",
+	["Worn Wooden Chest"] = "Подержанный деревянный сундук",
+	["Arena Treasure Chest"] = "Сундук Арены с сокровищами",
+	["Abercrombie's Crate"] = "Ящик Аберкромби",
+	["Rusty Chest"] = "Ржавый сундук",
+	["Marshal Haggard's Chest"] = "Сундук маршала Хаггарда",
+	["Sealed Supply Crate"] = "Запечатанный ящик с припасами",
+	["Damaged Crate"] = "Поврежденный ящик",
+	["Gizmorium Shipping Crate"] = "Упаковочный ящик Гизмориума",
+	["Shay's Chest"] = "Сундук Шай",
+	["Kerlonian's Chest"] = "Сундук Керлониана",
 } end)
 
 L:RegisterTranslations("deDE", function() return {
@@ -106,17 +199,17 @@ L:RegisterTranslations("deDE", function() return {
 	["Select all"] = "Alle ausw\195\164hlen",
 	["Select none"] = "Nichts ausw\195\164hlen",
 	
-  ["Treasure"] = "Sch\195\164tze",
+	["Treasure"] = "Sch\195\164tze",
 	["Module description"] = "Notizen von Schatzfundorten f\195\188r Cartographer (basiert auf Cartographer_Mining von kergoth)",
   
-  ["Icon alpha"] = "Transparenz",
+	["Icon alpha"] = "Transparenz",
 	["Alpha transparency of the icon"] = "Transparenz der Symbole",
 	["Icon size"] = "Symbolgr\195\182\195\159e",
 	["Size of the icons on the map"] = "Gr\195\182\195\159e des Symbols auf der Karte",
   
   -- Icons
 	["Box"] = "Kiste",
-  ["Chest"] = "Truhe",
+	["Chest"] = "Truhe",
 	["Clam"] = "Muschel",
 	["Barrel"] = "Fass",
 	["Shellfish"] = "Schalentier",
@@ -160,10 +253,10 @@ L:RegisterTranslations("frFR", function() return {
    ["Select all"] =  "Tout selectionner",
    ["Select none"] = "Rien selectionner",
    
-  ["Treasure"] = "tr\195\169sors et consommables",
+	["Treasure"] = "tr\195\169sors et consommables",
    ["Module description"] = "Notes Cartographe pour les tr\195\169sors et consommables (based on Cartographer_Mining by kergoth)",
  
-  ["Icon alpha"] = "alpha icone",
+	["Icon alpha"] = "alpha icone",
    ["Alpha transparency of the icon"] = "transparence alpha de l'icone",
    ["Icon size"] = "taille de l'icone",
    ["Size of the icons on the map"] = "taille des icones sur la carte",
@@ -216,10 +309,10 @@ L:RegisterTranslations("esES", function() return {
 	["Select all"] = "Seleccionar todo",
 	["Select none"] = "No seleccionar nada",
 
-  ["Treasure"] = "Tesoro",
+	["Treasure"] = "Tesoro",
 	["Module description"] = "Notas de mapa de tesoros para Cartographer (basado en Cartographer_Mining por kergoth)",
   
-  ["Icon alpha"] = "Transparencia de icono",
+	["Icon alpha"] = "Transparencia de icono",
 	["Alpha transparency of the icon"] = "Transparencia del icono",
 	["Icon size"] = "Tama\195\177o del icono",
 	["Size of the icons on the map"] = "Tama\195\177o de los iconos en el mapa",
